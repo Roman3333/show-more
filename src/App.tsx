@@ -9,7 +9,6 @@ import { IUser } from './types/user';
 function App() {
   const [data, setData] = useState<IUser[]>([]);
   const [page, setPage] = useState<number>(1);
-  const [totalPages, setTotalPages] = useState<number>(0);
   const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
@@ -19,7 +18,6 @@ function App() {
         const { data } = await axios.get(`https://reqres.in/api/users?page=${page}&per_page=3`);
         setData((prev) => [...prev, ...data.data]);
         setLoading(false);
-        setTotalPages(data.total_pages);
       } catch (error) {
         console.log(error);
       }
