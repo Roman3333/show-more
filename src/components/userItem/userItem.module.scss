@@ -1,0 +1,18 @@
+.parent {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+
+  &Left {
+    margin-right: 10px;
+  }
+
+  &Name {
+    display: flex;
+    font-size: 18px;
+  }
+
+  &Email {
+    display: block;
+  }
+}
